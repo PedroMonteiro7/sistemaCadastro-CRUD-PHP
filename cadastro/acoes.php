@@ -7,7 +7,7 @@
     switch ($_POST["acao"]) {
         case 'inserir':
 
-             //RECEBEIMENTO DOS DADOS:
+             //RECEBIMENTO DOS DADOS:
              $nome = $_POST["nome"];
              $sobrenome = $_POST["sobrenome"];
              $email = $_POST["email"];
@@ -25,6 +25,16 @@
              header('location: index.php');
  
              break;
+        case 'deletar':
+            $cod_pessoa = $_POST["cod_pessoa"];
+
+            $sqlDelete = "DELETE FROM tbl_pessoa WHERE cod_pessoa = $cod_pessoa";
+
+            $resultadoDelete = mysqli_query($conexao, $sqlDelete);
+
+            header("location: index.php");
+
+        break;
 
         default:
             # code...
