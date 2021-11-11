@@ -1,5 +1,11 @@
 <?php
     include('../componentes/header.php');
+
+    require("../database/conexao.php");
+
+    $sql = "SELECT * FROM tbl_pessoa";
+
+    $resultado = mysqli_query($conexao, $sql);
 ?>
 
 <div class="container">
