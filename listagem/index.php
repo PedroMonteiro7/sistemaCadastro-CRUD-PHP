@@ -34,13 +34,14 @@
                     <th><?= $email = $pessoa["email"] ?></th>
                     <th><?= $celular = $pessoa["celular"] ?></th>
                     <th>
-                    <form action="">
+                    <form action="../cadastro/editar.php?cod_pessoa=<?= $pessoa['cod_pessoa'] ?>" method="post" style="display: inline;">
+                        <input type="hidden" name="acao" value="editar">
                         <button class="btn btn-warning">Editar</button>
                     </form>
 
                     <form id="formDeletar" action="../cadastro/acoes.php" method="post" style="display: inline;">
                         <input type="hidden" name="acao" value="deletar">
-                        <input type="hidden" name="cod_pessoa" id="cod_pessoa" value="<?php echo $id; ?>"> 
+                        <input type="hidden" name="cod_pessoa" id="cod_pessoa" value="<?= $id ?>"> 
 
                         <button onclick="deletar()" class="btn btn-danger">Excluir</button>
                     </form>

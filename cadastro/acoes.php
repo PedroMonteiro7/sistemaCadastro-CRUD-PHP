@@ -25,6 +25,7 @@
              header('location: index.php');
  
              break;
+
         case 'deletar':
             $cod_pessoa = $_POST["cod_pessoa"];
 
@@ -32,7 +33,31 @@
 
             $resultadoDelete = mysqli_query($conexao, $sqlDelete);
 
-            header("location: index.php");
+            header("location: ../listagem/index.php");
+
+            break;
+
+        case 'editar':
+            $cod_pessoa = $_POST["cod_pessoa"];
+            
+            /** CAPTURA OS DADOS **/
+            $nome = $_POST["nome"];
+            $sobrenome = $_POST["sobrenome"];
+            $email = $_POST["email"];
+            $celular = $_POST["celular"];
+            
+            /** MONTAGEM E EXECUÇÃO DA INSTRUÇÃO SQL DE UPDATE **/
+            $sqlUpdate = "UPDATE tbl_pessoa SET 
+                          nome = '$nome',
+                          sobrenome = '$sobrenome',
+                          email = '$email',
+                          celular = '$celular'
+                          
+                          WHERE cod_pessoa = $cod_pessoa";
+
+            $resultado = mysqli_query($conexao, $sqlUpdate);
+
+            header("location: ../listagem/index.php");
 
         break;
 
