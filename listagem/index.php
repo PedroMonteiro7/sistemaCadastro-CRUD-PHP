@@ -1,7 +1,14 @@
 <?php
+
+    session_start();
+
     include('../componentes/header.php');
 
     require("../database/conexao.php");
+
+    if (!isset($_SESSION["usuarioId"])) {
+        header("location: ../login/index.php");
+    }
 
     $sql = "SELECT * FROM tbl_pessoa";
 

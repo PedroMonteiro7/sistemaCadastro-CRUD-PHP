@@ -1,5 +1,11 @@
 <?php
+    session_start();
+
     include('../componentes/header.php');
+
+    if (!isset($_SESSION["usuarioId"])) {
+        header("location: ../login/index.php");
+    }
 ?>
 
 

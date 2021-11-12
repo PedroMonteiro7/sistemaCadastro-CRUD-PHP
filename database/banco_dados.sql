@@ -12,3 +12,11 @@ sobrenome varchar(500) not null,
 email varchar(500) not null,
 celular varchar(20) not null
 );
+
+create table tbl_administrador (
+	idAdministrador int not null auto_increment primary key,
+    nome varchar(250) not null,
+    usuario varchar(100) not null,
+    senha varchar(120) not null,
+    unique index (idAdministrador)
+);

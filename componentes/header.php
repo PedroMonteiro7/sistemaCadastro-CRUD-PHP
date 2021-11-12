@@ -15,6 +15,8 @@
 
 <body>
     
+<?php if (isset($_SESSION["usuarioId"])) { ?>
+
 <nav class="navbar navbar-dark bg-primary">
     <a class="navbar-brand" href="">
         Cadastro
@@ -40,6 +42,7 @@
         </li>
         
     </ul>
-    
 
 </nav>
+
+<?php } ?>
