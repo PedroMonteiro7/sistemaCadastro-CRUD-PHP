@@ -44,10 +44,11 @@ switch ($_POST["acao"]) {
 
     case 'logout':
 
+        session_unset();
         session_destroy();
 
-        header("location: ../login/index.php");
+        header("location: ./index.php");
     
     default:
-        header("location: ../login/index.php");
+        header("location: ./index.php");
 }

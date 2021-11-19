@@ -1,10 +1,4 @@
-<?php
 
-    session_start();
-
-    $raiz = "/pedroMonteiro/atividade_crud";
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +40,16 @@
 
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
+            <form method="POST" action="../login/acoesLogin.php">
+            <input type="hidden" name="acao" value="logout"/>
+            <button class="btn btn-danger" type="submit">Sair</button>
+        </form>
+        </li>
+        
+    </ul>
+
+    <!-- <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
             <a class="nav-link" href="../login/" onclick="logout()">Sair</a>
         </li>
     </ul>
@@ -59,7 +63,7 @@
         document.querySelector("#form-logout").submit();
     }
 
-    </script>
+    </script> -->
 
 </nav>
 
